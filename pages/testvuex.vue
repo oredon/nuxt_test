@@ -27,6 +27,12 @@ export default {
       changeCounter: 'testvuex/changeCounter',
       resetCounter : 'testvuex/resetCounter'
     })
+  },
+  /**
+   * SSRでは実行されない、表示時の処理
+   */
+  mounted: function() {
+    this.resetCounter();
   }
 }
 </script>
