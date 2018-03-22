@@ -13,13 +13,12 @@ import axios from 'axios';
 export default {
   async asyncData ({ params }) {
     let {data:user} = await axios.get('https://api.github.com/users/' + params.id);
-    console.log(user)
     return {user};
   }
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   min-height: 100vh;
   display: flex;
@@ -27,14 +26,12 @@ export default {
   align-items: center;
   text-align: center;
   /*flex-direction: column;*/
-  /*
-  .userImg{
+
+  & .userImg img{
+    width: 100%;
     border-radius: 50%;
   }
-  */
+
 }
-.userImg img{
-  width: 100%;
-  border-radius: 50%;
-}
+
 </style>
